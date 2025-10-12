@@ -1,0 +1,14 @@
+py -3 -m venv - створення в?ртуального середовища
+.venv\Scripts\activate.bat - активац?я середовища
+py -3 -m pip install - встановлення пакета
+py -3 -m django startproject - створення каркасу проєкту
+py -3 manage.py startapp - створення додатка
+py -3 manage.py migrate - застосування м?грац?й бд
+py -3 manage.py runserver - запуск dev-сервера
+django.urls.path() - маршрут url
+django.urls.include() - п?дключення urls додатка
+django.http.HttpResponse - проста http-в?дпов?дь
+django.shortcuts.render() - рендер шаблону з контекстом
+django.db.models.Model - базовий клас модел? бд
+QuerySet: all(), filter(), get(), create(), count() - виб?рки/створення у бд
+git init/add/commit/push - верс?онування ? публ?кац?я на github
