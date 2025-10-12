@@ -1,0 +1,11 @@
+Post.objects.create() - створення запису
+Post.objects.all() - виб?р ус?х запис?в
+Post.objects.filter() - ф?льтрац?я запис?в
+Post.objects.get() - отримання одного запису
+Post.objects.order_by() - сортування
+Post.objects.count() - п?драхунок запис?в
+obj.save() - збереження зм?н
+python manage.py makemigrations - створення файл?в м?грац?й
+python manage.py migrate - застосування м?грац?й
+python manage.py shell - робота з ORM через ?нтерактивну консоль
+python manage.py createsuperuser - створення адм?н?стратора
