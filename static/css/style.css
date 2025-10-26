@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+
+:root {
+  --bg: #0b0f1a;
+  --panel: #111827;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --brand1: #6366f1;
+  --brand2: #3b82f6;
+  --accent: #22d3ee;
+  --card: #1e293b;
+  --radius: 16px;
+  --shadow: 0 10px 40px rgba(0, 0, 0, .45);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #0f172a, #0b0f1a);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* header */
+.site-header {
+  background: linear-gradient(90deg, var(--brand1), var(--brand2));
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+  transition: opacity .2s ease;
+}
+
+.brand:hover { opacity: .8; }
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 20px;
+  transition: opacity .2s ease;
+}
+
+.nav a:hover { opacity: .8; }
+
+/* cards */
+.card {
+  background: linear-gradient(160deg, var(--panel), var(--card));
+  border-radius: var(--radius);
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(99,102,241,.4);
+}
+
+.card h3 a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.card h3 a:hover {
+  color: var(--brand2);
+}
+
+.card p {
+  color: var(--muted);
+  margin-top: .4rem;
+}
+
+/* footer */
+.site-footer {
+  border-top: 1px solid #1f2937;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  color: var(--muted);
+  text-align: center;
+  background: rgba(15, 23, 42, .8);
+}
+
+/* animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeInUp .6s ease both;
+}
+
+@media (min-width: 700px) {
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .card { margin: 0; }
+}
