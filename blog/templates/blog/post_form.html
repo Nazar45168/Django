@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}створити/редагувати пост{% endblock %}
+{% block content %}
+  <h1>{% if mode == 'edit' %}редагувати пост{% else %}новий пост{% endif %}</h1>
+  <form method="post" class="card" style="max-width:700px">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">зберегти</button>
+    <a href="/" class="btn" style="background:#334155">скасувати</a>
+  </form>
+{% endblock %}
