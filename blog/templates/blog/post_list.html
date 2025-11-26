@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}список постів{% endblock %}
+{% block content %}
+<h2>пости</h2>
+{% for post in posts %}
+  <article class="post">
+    <h3><a href="{% url "post_detail" post.pk %}">{{ post.title }}</a></h3>
+    <p>{{ post.text|slice:":140" }}{% if post.text|length > 140 %}...{% endif %}</p>
+  </article>
+{% empty %}<p>поки немає записів</p>{% endfor %}
+{% endblock %}

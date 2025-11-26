@@ -1,5 +1,21 @@
-<!doctype html>
-<html lang="uk">
-<head><meta charset="utf-8"><title>Головна</title></head>
-<body><h1>Маршрутизація працює — Django виводить HTML!</h1></body>
-</html>
+{% extends "base.html" %}
+{% block title %}мій блог{% endblock %}
+
+{% block content %}
+<h1>пости</h1>
+
+<div class="grid">
+  {% for post in posts %}
+    <article class="card">
+      <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+      <p>{{ post.text|truncatechars:160 }}</p>
+      <a class="btn" href="{% url 'post_detail' post.pk %}">читати</a>
+      <a class="btn" href="{% url 'post_edit' post.pk %}">редагувати</a>
+    </article>
+  {% empty %}
+    <p>поки що немає постів.</p>
+  {% endfor %}
+</div>
+
+<a class="btn" href="{% url 'post_new' %}">новий пост</a>
+{% endblock %}
